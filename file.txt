@@ -1,6 +1,6 @@
 ID:1|
-Tên sách:minh|
-Tên tác giả:long|
-Giá bán:500|
+Tên sách:loi|
+Tên tác giả:minh|
+Giá bán:120|
 Xuất xứ sách:my
 -------------------------------------

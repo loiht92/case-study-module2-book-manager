@@ -9,6 +9,7 @@ public class Test {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
+        showMenu();
         List<Book> bookList = new ArrayList<>();
         int choose;
         int bookId;
@@ -51,7 +52,7 @@ public class Test {
                     System.err.println("Bạn vui lòng chọn lại !!");
                     break;
             }
-            showMenu();
+           // showMenu();
         }
 
     }
