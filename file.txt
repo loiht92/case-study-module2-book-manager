@@ -1,0 +1,6 @@
+ID:1|
+Tên sách:minh|
+Tên tác giả:long|
+Giá bán:500|
+Xuất xứ sách:my
+-------------------------------------
