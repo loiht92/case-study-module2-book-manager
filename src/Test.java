@@ -16,7 +16,7 @@ public class Test {
         String bookAuthor;
         BookManager bookManager = new BookManager(bookList);
 
-        showMenu();
+        //showMenu();
 
         while (true) {
             choose = Integer.parseInt(scanner.nextLine());
@@ -52,7 +52,7 @@ public class Test {
                     System.err.println("Bạn vui lòng chọn lại !!");
                     break;
             }
-            // showMenu();
+             showMenu();
         }
 
     }

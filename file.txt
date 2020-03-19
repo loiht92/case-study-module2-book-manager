@@ -1,12 +1,12 @@
 ID:1|
-Tên sách:loi|
-Tên tác giả:minh|
-Giá bán:120|
+Tên sách:an|
+Tên tác giả:nhien|
+Giá bán:400|
 Xuất xứ sách:my
 -------------------------------------
 ID:2|
-Tên sách:lonh|
-Tên tác giả:jdss|
-Giá bán:300|
-Xuất xứ sách:mu
+Tên sách:long|
+Tên tác giả:duc|
+Giá bán:200|
+Xuất xứ sách:my
 -------------------------------------

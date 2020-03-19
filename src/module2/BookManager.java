@@ -12,7 +12,7 @@ public class BookManager {
 
     public BookManager(List<Book> bookList) throws Exception {
         xuLyFile = new XuLyFile();
-        addBook(bookList);
+        //addBook(bookList);
 
         xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
         xuLyFile.read(bookList);
