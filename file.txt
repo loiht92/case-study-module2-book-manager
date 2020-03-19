@@ -4,3 +4,9 @@ Tên tác giả:minh|
 Giá bán:120|
 Xuất xứ sách:my
 -------------------------------------
+ID:2|
+Tên sách:lonh|
+Tên tác giả:jdss|
+Giá bán:300|
+Xuất xứ sách:mu
+-------------------------------------

@@ -28,7 +28,7 @@ public class BookManager {
 
         Book book = new Book(id,name,author,price,origin);
         bookList.add(book);
-       xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+        xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
     }
 
     public void deleteBook(List<Book> bookList, int id) throws Exception {
@@ -70,7 +70,7 @@ public class BookManager {
     }
     public void search(List<Book> bookList, String author){
         System.out.println("Nhập tên cần tìm kiếm.");
-         author = scanner.nextLine();
+        author = scanner.nextLine();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
                 book.show();
