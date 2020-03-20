@@ -42,6 +42,7 @@ public class BookManager {
         if (book != null){
             bookList.remove(book);
             xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+            show(bookList);
         }else {
             System.out.println("ID không tồn tại !");
         }
@@ -57,6 +58,7 @@ public class BookManager {
                     book.setAuthor(inputAuthor());
                     book.setPrice(inputPrice());
                     book.setOrigin(inputOrigin());
+                    show(bookList);
                     break;
                 }catch (Exception e){
                     e.printStackTrace();
@@ -68,14 +70,53 @@ public class BookManager {
         }
         xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
     }
-    public void search(List<Book> bookList, String author){
-        System.out.println("Nhập tên cần tìm kiếm.");
-        author = scanner.nextLine();
+    public void searchAuthor(List<Book> bookList, String author){
+//        System.out.println("Nhập tên tác giả bạn cần tìm kiếm:");
+//        author = scanner.nextLine();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
-                book.show();
+                show(bookList);
             }
         }
+    }
+
+    public void searchName(List<Book> bookList, String name){
+//        System.out.println("Nhập tên sách bạn muốn tìm kiếm:");
+//        name = scanner.nextLine();
+        for (Book book: bookList){
+            if (book.getName().equalsIgnoreCase(name)){
+                show(bookList);
+            }
+        }
+    }
+
+    public void searchPrice(List<Book> bookList, int price){
+//        System.out.println("Nhập giá sách bạn muốn tìm kiếm:");
+//        price = scanner.nextInt();
+        for (Book book: bookList){
+            if (book.getPrice() == price){
+                show(bookList);
+            }
+        }
+    }
+
+    public static StringBuilder insertionSortByPrice(List<Book> list) {
+        for (int i = 1; i < list.size(); i++) {
+            Book currentElement = list.get(i);
+            int k;
+            for (k = i - 1; k >= 0 && list.get(k).getPrice() > currentElement.getPrice(); k--) {
+                list.set(k + 1, list.get(k));
+
+            }
+            list.set(k + 1, currentElement);
+        }
+        StringBuilder builder = new StringBuilder();
+        for (Book book:list){
+            //String bookInfo = book.toString();
+            builder.append(book.toString()).append("\n");
+        }
+        return builder;
+
     }
 
     public static String  selectionSortByPrice(List<Book> list) {
@@ -109,8 +150,8 @@ public class BookManager {
 
 
     public void shortBookByName(List<Book> bookList){
-        ShortBookByName shortBookByName = new ShortBookByName();
-        bookList.sort(shortBookByName);
+        Collections.sort(bookList, new ShortBookByName());
+        show(bookList);
     }
 
     public int inputID() {
@@ -124,7 +165,7 @@ public class BookManager {
             }
         }
     }
-    private String inputName(){
+    public String inputName(){
         System.out.println("Nhập tên sách:");
         while (true) {
             try {
@@ -148,7 +189,7 @@ public class BookManager {
             }
         }
     }
-    private int inputPrice(){
+    public int inputPrice(){
         System.out.println("Nhập giá bán:");
         while (true){
             try {
@@ -179,11 +220,15 @@ public class BookManager {
     public void show(List<Book> bookList){
         for (Book book : bookList){
             System.out.format("ID:%2d | ", book.getId());
-            System.out.format("Tên sản phẩm:%4s | ", book.getName());
-            System.out.format("Tác giả:%6s | ", book.getAuthor());
-            System.out.format("Giá bán:%2d | ", book.getPrice());
-            System.out.format("Xuất xứ:%4s | ", book.getOrigin());
+
+            System.out.format("Tên sản phẩm:%30s | ", book.getName());
+
+            System.out.format("Tác giả:%15s | ", book.getAuthor());
+
+            System.out.format("Giá bán:%6d | ", book.getPrice());
+
+            System.out.format("Xuất xứ:%10s | ", book.getOrigin());
             System.out.println();
-        }
+    }
     }
 }

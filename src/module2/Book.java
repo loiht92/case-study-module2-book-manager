@@ -57,7 +57,7 @@ public class Book {
     public void setOrigin(String origin) {
         this.origin = origin;
     }
-    public void show(){
+    public void display(){
         System.out.println(toString());
     }
 

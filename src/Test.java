@@ -14,10 +14,10 @@ public class Test {
         int choose;
         int bookId;
         String bookAuthor;
+        String bookName;
+        int bookPrice;
         BookManager bookManager = new BookManager(bookList);
-
         //showMenu();
-
         while (true) {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -34,15 +34,26 @@ public class Test {
                     break;
                 case 4:
                     bookAuthor = bookManager.inputAuthor();
-                    bookManager.search(bookList, bookAuthor);
+                    bookManager.searchAuthor(bookList, bookAuthor);
                     break;
                 case 5:
-                    System.out.println(BookManager.selectionSortByPrice(bookList) );
+                    bookName = bookManager.inputName();
+                    bookManager.searchName(bookList, bookName);
                     break;
                 case 6:
-                    bookManager.shortBookByName(bookList);
+                    bookPrice = bookManager.inputPrice();
+                    bookManager.searchPrice(bookList, bookPrice);
                     break;
                 case 7:
+                    System.out.println(BookManager.selectionSortByPrice(bookList) );
+                    break;
+                case 8:
+                    System.out.println(BookManager.insertionSortByPrice(bookList));
+                    break;
+                case 9:
+                    bookManager.shortBookByName(bookList);
+                    break;
+                case 10:
                     bookManager.show(bookList);
                     break;
                 case 0:
@@ -62,9 +73,12 @@ public class Test {
         System.out.println("2: Xoá thông tin cuốn sách. ");
         System.out.println("3: Chỉnh sửa thông tin sách. ");
         System.out.println("4: Tìm kiếm sách theo tác giả. ");
-        System.out.println("5: Sắp xếp giá bán theo thuật toán sắp xếp chèn. ");
-        System.out.println("6: Sắp xếp sách theo tên. ");
-        System.out.println("7: Hiển thị thông tin các quyển sách.");
+        System.out.println("5: Tìm kiếm sách theo tên sách. ");
+        System.out.println("6: Tìm kiếm sách theo giá sách. ");
+        System.out.println("7: Sắp xếp giá bán theo thuật toán sắp xếp chèn. ");
+        System.out.println("8: Sắp xếp giá bán theo thuật toán sắp xếp chọn. ");
+        System.out.println("9: Sắp xếp sách theo tên. ");
+        System.out.println("10: Hiển thị thông tin các quyển sách.");
         System.out.println("0: Thoát. ");
         System.out.println("-----------------------------------");
     }

@@ -1,12 +1,24 @@
 ID:1|
-Tên sách:an|
-Tên tác giả:nhien|
+Tên sách:toi thay hoa vang tren co xanh|
+Tên tác giả:nguyen nhat anh|
 Giá bán:400|
-Xuất xứ sách:my
+Xuất xứ sách:viet nam
 -------------------------------------
 ID:2|
-Tên sách:long|
-Tên tác giả:duc|
+Tên sách:bay buoc toi mua he|
+Tên tác giả:nguyen nhat anh|
 Giá bán:200|
-Xuất xứ sách:my
+Xuất xứ sách:viet nam
+-------------------------------------
+ID:3|
+Tên sách:bui duong tuoi tre|
+Tên tác giả:thien minh|
+Giá bán:300|
+Xuất xứ sách:viet nam
+-------------------------------------
+ID:4|
+Tên sách:bat tre dong xnah|
+Tên tác giả:salinger|
+Giá bán:150|
+Xuất xứ sách:nhat
 -------------------------------------
