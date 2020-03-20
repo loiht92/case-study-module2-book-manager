@@ -73,7 +73,7 @@ public class BookManager {
 //        author = scanner.nextLine();
         for (Book book : bookList) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
-                show(bookList);
+                book.display();
             }
         }
     }
@@ -83,7 +83,7 @@ public class BookManager {
 //        name = scanner.nextLine();
         for (Book book: bookList){
             if (book.getName().equalsIgnoreCase(name)){
-                show(bookList);
+                book.display();
             }
         }
     }
@@ -93,7 +93,7 @@ public class BookManager {
 //        price = scanner.nextInt();
         for (Book book: bookList){
             if (book.getPrice() == price){
-                show(bookList);
+                book.display();
             }
         }
     }
@@ -101,7 +101,7 @@ public class BookManager {
     public void searchOrigin(List<Book> bookList, String origin){
         for (Book book:bookList){
             if (book.getOrigin().equalsIgnoreCase(origin)){
-                show(bookList);
+                book.display();
             }
         }
     }

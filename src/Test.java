@@ -49,6 +49,7 @@ public class Test {
                 case 7:
                     bookOrigin = bookManager.inputOrigin();
                     bookManager.searchOrigin(bookList, bookOrigin);
+                    break;
                 case 8:
                     System.out.println(BookManager.selectionSortByPrice(bookList) );
                     break;
