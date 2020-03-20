@@ -1,21 +1,19 @@
 package module2;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class BookManager {
     public static Scanner scanner = new Scanner(System.in);
-    private static XuLyFile xuLyFile;
+    private static ProcessingFile processingFile;
 
     public BookManager(List<Book> bookList) throws Exception {
-        xuLyFile = new XuLyFile();
+        processingFile = new ProcessingFile();
         //addBook(bookList);
 
-        xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
-        xuLyFile.read(bookList);
+        processingFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+        processingFile.read(bookList);
     }
 
     public void addBook(List<Book> bookList) throws Exception {
@@ -28,7 +26,7 @@ public class BookManager {
 
         Book book = new Book(id,name,author,price,origin);
         bookList.add(book);
-        xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+        processingFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
     }
 
     public void deleteBook(List<Book> bookList, int id) throws Exception {
@@ -41,7 +39,7 @@ public class BookManager {
         }
         if (book != null){
             bookList.remove(book);
-            xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+            processingFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
             show(bookList);
         }else {
             System.out.println("ID không tồn tại !");
@@ -68,7 +66,7 @@ public class BookManager {
         if (!isExisted) {
             System.out.println("Id không hợp lệ !");
         }
-        xuLyFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
+        processingFile.write("/Users/holoi/IdeaProjects/Case Study Module2/file.txt",bookList);
     }
     public void searchAuthor(List<Book> bookList, String author){
 //        System.out.println("Nhập tên tác giả bạn cần tìm kiếm:");
@@ -146,8 +144,8 @@ public class BookManager {
         }
         StringBuilder builder = new StringBuilder();
         for (Book book : list) {
-            String bookInfo = book.toString();
-            builder.append(bookInfo).append("\n");
+            //String bookInfo = book.toString();
+            builder.append(book.toString()).append("\n");
         }
         return builder;
     }
@@ -203,7 +201,7 @@ public class BookManager {
             try {
                 int price = Integer.parseInt(scanner.nextLine());
                 if (price < 0 || price > 500000){
-                    throw new NumberFormatException();
+                    System.out.println("Không hợp lệ ! Mời bạn nhập lại.");
                 }
                 return price;
             }catch (NumberFormatException e){
@@ -228,13 +226,9 @@ public class BookManager {
     public void show(List<Book> bookList){
         for (Book book : bookList){
             System.out.format("ID:%2d | ", book.getId());
-
             System.out.format("Tên sản phẩm:%30s | ", book.getName());
-
             System.out.format("Tác giả:%15s | ", book.getAuthor());
-
             System.out.format("Giá bán:%6d | ", book.getPrice());
-
             System.out.format("Xuất xứ:%10s | ", book.getOrigin());
             System.out.println();
     }

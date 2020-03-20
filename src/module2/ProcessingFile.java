@@ -3,7 +3,7 @@ package module2;
 import java.io.*;
 import java.util.List;
 
-public class XuLyFile {
+public class ProcessingFile {
     public void write(String FilePath, List<Book> bookList) {
         try {
             FileWriter file = new FileWriter(FilePath);
