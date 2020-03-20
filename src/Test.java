@@ -16,6 +16,8 @@ public class Test {
         String bookAuthor;
         String bookName;
         int bookPrice;
+        String bookOrigin;
+
         BookManager bookManager = new BookManager(bookList);
         //showMenu();
         while (true) {
@@ -45,15 +47,18 @@ public class Test {
                     bookManager.searchPrice(bookList, bookPrice);
                     break;
                 case 7:
+                    bookOrigin = bookManager.inputOrigin();
+                    bookManager.searchOrigin(bookList, bookOrigin);
+                case 8:
                     System.out.println(BookManager.selectionSortByPrice(bookList) );
                     break;
-                case 8:
+                case 9:
                     System.out.println(BookManager.insertionSortByPrice(bookList));
                     break;
-                case 9:
+                case 10:
                     bookManager.shortBookByName(bookList);
                     break;
-                case 10:
+                case 11:
                     bookManager.show(bookList);
                     break;
                 case 0:
@@ -75,10 +80,11 @@ public class Test {
         System.out.println("4: Tìm kiếm sách theo tác giả. ");
         System.out.println("5: Tìm kiếm sách theo tên sách. ");
         System.out.println("6: Tìm kiếm sách theo giá sách. ");
-        System.out.println("7: Sắp xếp giá bán theo thuật toán sắp xếp chèn. ");
-        System.out.println("8: Sắp xếp giá bán theo thuật toán sắp xếp chọn. ");
-        System.out.println("9: Sắp xếp sách theo tên. ");
-        System.out.println("10: Hiển thị thông tin các quyển sách.");
+        System.out.println("7: Tìm kiếm sách theo xuất xứ sách. ");
+        System.out.println("8: Sắp xếp giá bán theo thuật toán sắp xếp chèn. ");
+        System.out.println("9: Sắp xếp giá bán theo thuật toán sắp xếp chọn. ");
+        System.out.println("10: Sắp xếp sách theo tên. ");
+        System.out.println("11: Hiển thị thông tin các quyển sách.");
         System.out.println("0: Thoát. ");
         System.out.println("-----------------------------------");
     }

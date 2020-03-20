@@ -100,6 +100,14 @@ public class BookManager {
         }
     }
 
+    public void searchOrigin(List<Book> bookList, String origin){
+        for (Book book:bookList){
+            if (book.getOrigin().equalsIgnoreCase(origin)){
+                show(bookList);
+            }
+        }
+    }
+
     public static StringBuilder insertionSortByPrice(List<Book> list) {
         for (int i = 1; i < list.size(); i++) {
             Book currentElement = list.get(i);
@@ -119,7 +127,7 @@ public class BookManager {
 
     }
 
-    public static String  selectionSortByPrice(List<Book> list) {
+    public static StringBuilder  selectionSortByPrice(List<Book> list) {
         for (int i = 0; i < list.size() - 1; i++) {
             Book currentMin = list.get(i);
             int currentIndex = list.indexOf(list.get(i));
@@ -141,7 +149,7 @@ public class BookManager {
             String bookInfo = book.toString();
             builder.append(bookInfo).append("\n");
         }
-        return builder.toString();
+        return builder;
     }
 
 
@@ -203,7 +211,7 @@ public class BookManager {
             }
         }
     }
-    private String inputOrigin(){
+    public String inputOrigin(){
         System.out.println("Nhập xuất xứ hàng bán:");
         while (true){
             try {
